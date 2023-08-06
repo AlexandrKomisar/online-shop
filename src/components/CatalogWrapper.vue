@@ -1,7 +1,8 @@
 <template>
-    <div class="catalog-wrapper"></div>
-    <catalog-main/>
-    <catalog-cart/>
+    <div class="catalog-wrapper">
+        <catalog-main/>
+        <catalog-cart/>
+    </div>
 </template>
 
 <script>
