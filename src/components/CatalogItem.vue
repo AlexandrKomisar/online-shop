@@ -1,6 +1,8 @@
 <template>
     <div class="catalog-item">
-        <img :src="require('../assets/images/' + product_data.image)" alt="img">
+        <div>
+            <img :src="require('../assets/images/' + product_data.image)" alt="img">
+        </div>
         <p class="catalog-item__name">{{product_data.name}}</p>
         <p class="catalog-item__price">{{product_data.price}} UAH</p>
         <button 
@@ -24,7 +26,7 @@ export default {
     },
     methods:{
         addToCart(){
-            this.$emit('sendArticle', this.product_data.article)   
+            this.$emit('addToCart', this.product_data)   
         }
     }
 }
