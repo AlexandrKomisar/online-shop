@@ -1,5 +1,10 @@
 <template>
     <div class="catalog">
+        <router-link :to="{name: 'cart'}">
+            <div class="catalog__link">
+                Cart: {{CART.length}}
+            </div>
+        </router-link>
         <h2>Catalog</h2>
         <div class="catalog__list">
             <CatalogItem
@@ -28,7 +33,8 @@ export default {
     },
     computed:{
         ...mapGetters([
-            'PRODUCTS'
+            'PRODUCTS',
+            'CART'
         ])
     },
     methods:{
