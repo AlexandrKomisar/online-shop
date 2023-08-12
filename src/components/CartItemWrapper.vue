@@ -7,6 +7,10 @@
             @deleteFromCart="deleteFromCart(index)"
         />
     </div>
+    <div class="Cart-item-wrapper__total">
+        <p class="Cart-item-wrapper__total">
+        Total: {{cartTotalCost}}</p>
+    </div>
 </template>
 
 <script>
@@ -33,6 +37,18 @@ export default {
         deleteFromCart(index){
             this.DELETE_FROM_CART(index)
         }  
+    },
+    computed: {
+        cartTotalCost(){
+            let result = [];
+            for(let item of this.cart_data){
+                result.push(item.price * item.quantity);
+            }
+            result = result.reduce(function(sum, el){
+               return sum +  el
+            })
+            return result
+        }
     }
 }
 </script>
